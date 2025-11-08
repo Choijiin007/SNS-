@@ -1,9 +1,9 @@
-import { useCountStore } from "@/store/count";
+import { usedecreasCount, useIncreaseCount } from "@/store/count";
 import { Button } from "@/components/ui/button";
 export default function Controller() {
-  const decrease = useCountStore((store) => store.decrease);
-  const increase = useCountStore((store) => store.increase);
-  //   const store = useCountStore(); 를 구조분해한 결과
+  // 변수가 달라질 경우를 대비하여 커스텀 훅으로 변경
+  const increase = useIncreaseCount();
+  const decrease = usedecreasCount();
 
   return (
     <>
